@@ -110,7 +110,7 @@ export function ContactForm() {
         {errors.message && <small id="message-error" className="field-error">{errors.message}</small>}
       </div>
       <button className="button contact-submit" type="submit" disabled={status === "sending"}>
-        {status === "sending" ? "Enviando..." : "Solicitar orçamento"}
+        {status === "sending" ? "Enviando..." : "Enviar solicitação"}
         <span aria-hidden="true">{status === "sending" ? "···" : "↗"}</span>
       </button>
       <div className="form-status" aria-live="polite">
