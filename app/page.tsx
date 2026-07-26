@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { ContactForm } from "../components/ContactForm";
 
 const whatsapp =
   "https://wa.me/5548999999999?text=Olá%2C%20gostaria%20de%20solicitar%20um%20orçamento.";
@@ -284,13 +285,34 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="final-cta" id="contato">
+        <section className="final-cta">
           <div className="container cta-inner reveal">
             <span className="eyebrow light">Vamos conversar</span>
             <h2>Vamos tirar seu projeto<br />do papel?</h2>
             <p>Conte sua ideia e receba um atendimento rápido, próximo e profissional.</p>
             <a className="button button-light" href={whatsapp} target="_blank" rel="noreferrer"><span className="wa-icon">●</span> Solicitar orçamento <span>↗</span></a>
             <div className="cta-detail">Atendimento em Florianópolis <i /> Resposta rápida <i /> Desde 2015</div>
+          </div>
+        </section>
+
+        <section className="contact-section" id="contato">
+          <div className="container contact-grid">
+            <div className="contact-copy reveal">
+              <span className="eyebrow">Solicite seu orçamento</span>
+              <h2>Vamos conversar<br />sobre seu projeto.</h2>
+              <p>Conte o que você precisa. Vamos entender os detalhes e encontrar a melhor solução para o seu ambiente.</p>
+              <a className="button contact-whatsapp" href={whatsapp} target="_blank" rel="noreferrer">
+                <span className="wa-icon">●</span> Falar pelo WhatsApp <span aria-hidden="true">↗</span>
+              </a>
+              <div className="response-note"><span>✓</span><p><strong>Retorno o mais breve possível</strong><small>Atendimento próximo, direto e sem compromisso.</small></p></div>
+            </div>
+            <div className="contact-card reveal">
+              <div className="contact-card-heading">
+                <span>Orçamento</span>
+                <small>Campos com * são obrigatórios</small>
+              </div>
+              <ContactForm />
+            </div>
           </div>
         </section>
       </main>
