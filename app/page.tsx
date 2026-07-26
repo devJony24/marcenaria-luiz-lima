@@ -136,7 +136,7 @@ export default function Home() {
               <h1>Móveis planejados, montagem e instalações com <em>acabamento profissional.</em></h1>
               <p>Mais de 10 anos atendendo Florianópolis com rapidez, qualidade e mais de 2.500 serviços realizados.</p>
               <div className="hero-actions">
-                <a className="button" href={whatsapp} target="_blank" rel="noreferrer">Solicitar orçamento <span>↗</span></a>
+                <a className="button hero-primary" href={whatsapp} target="_blank" rel="noreferrer">Solicitar orçamento pelo WhatsApp <span>↗</span></a>
                 <a className="text-link" href={whatsapp} target="_blank" rel="noreferrer">
                   <span className="wa-icon">●</span> Falar no WhatsApp
                 </a>
@@ -157,13 +157,13 @@ export default function Home() {
         <section className="numbers" aria-label="Nossos números">
           <div className="container number-grid">
             {[
-              ["◷", "Desde", "2015"],
-              ["✦", "Mais de", "2.500 atendimentos"],
-              ["⌖", "Atendimento em", "Florianópolis"],
-              ["↗", "Agendamento", "rápido"],
-            ].map(([icon, label, value]) => (
+              ["◷", "2015", "Desde"],
+              ["✦", "2.500+", "Atendimentos realizados"],
+              ["⌖", "Florianópolis", "Atendimento local"],
+              ["↗", "Rápido", "Agendamento facilitado"],
+            ].map(([icon, value, label]) => (
               <article key={value} className="number-card reveal">
-                <span>{icon}</span><div><small>{label}</small><strong>{value}</strong></div>
+                <span>{icon}</span><div><strong>{value}</strong><small>{label}</small></div>
               </article>
             ))}
           </div>
@@ -287,9 +287,9 @@ export default function Home() {
         <section className="final-cta" id="contato">
           <div className="container cta-inner reveal">
             <span className="eyebrow light">Vamos conversar</span>
-            <h2>Pronto para transformar<br />seu ambiente?</h2>
-            <p>Solicite um orçamento e tenha um atendimento rápido e profissional.</p>
-            <a className="button button-light" href={whatsapp} target="_blank" rel="noreferrer"><span className="wa-icon">●</span> Falar no WhatsApp <span>↗</span></a>
+            <h2>Vamos tirar seu projeto<br />do papel?</h2>
+            <p>Conte sua ideia e receba um atendimento rápido, próximo e profissional.</p>
+            <a className="button button-light" href={whatsapp} target="_blank" rel="noreferrer"><span className="wa-icon">●</span> Solicitar orçamento <span>↗</span></a>
             <div className="cta-detail">Atendimento em Florianópolis <i /> Resposta rápida <i /> Desde 2015</div>
           </div>
         </section>
@@ -303,7 +303,16 @@ export default function Home() {
           </div>
           <div><h3>Navegação</h3>{nav.slice(0, 4).map(([label, id]) => <a key={id} href={`#${id}`}>{label}</a>)}</div>
           <div><h3>Contato</h3><a href={whatsapp} target="_blank" rel="noreferrer">WhatsApp</a><a href="mailto:contato@luizlimamoveis.com.br">E-mail</a><span>Florianópolis — SC</span></div>
-          <div><h3>Endereço</h3><address>Rua Fabriciano Inácio Monteiro, 1112<br />Florianópolis — SC</address><div className="socials"><a href="#" aria-label="Instagram">ig</a><a href="#" aria-label="Facebook">f</a></div></div>
+          <div>
+            <h3>Endereço</h3>
+            <a className="address-link" href="https://www.google.com/maps/search/?api=1&query=Rua+Fabriciano+Inácio+Monteiro+1112+Florianópolis" target="_blank" rel="noreferrer">
+              <address>Rua Fabriciano Inácio Monteiro, 1112<br />Florianópolis — SC <span aria-hidden="true">↗</span></address>
+            </a>
+            <div className="socials">
+              <span className="social-placeholder" aria-label="Instagram será adicionado futuramente">ig<small>em breve</small></span>
+              <a href={whatsapp} target="_blank" rel="noreferrer" aria-label="WhatsApp">wa</a>
+            </div>
+          </div>
         </div>
         <div className="container footer-bottom"><span>© {new Date().getFullYear()} Luiz Lima Móveis. Todos os direitos reservados.</span><span>Feito com precisão em Florianópolis.</span></div>
       </footer>
