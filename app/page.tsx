@@ -5,7 +5,9 @@ import Image from "next/image";
 import { ContactSelector } from "../components/ContactSelector";
 
 const whatsapp =
-  "https://wa.me/5548999999999?text=Olá%2C%20gostaria%20de%20solicitar%20um%20orçamento.";
+  "https://wa.me/554898307060?text=Olá%2C%20gostaria%20de%20solicitar%20um%20orçamento.";
+const instagram =
+  "https://www.instagram.com/luizlimamoveis?igsh=a2Vkc29mOXYzczQ4&utm_source=qr";
 
 const nav = [
   ["Home", "home"],
@@ -302,7 +304,7 @@ export default function Home() {
               <address>Rua Fabriciano Inácio Monteiro, 1112<br />Florianópolis — SC <span aria-hidden="true">↗</span></address>
             </a>
             <div className="socials">
-              <span className="social-placeholder" aria-label="Instagram será adicionado futuramente">ig<small>em breve</small></span>
+              <a href={instagram} target="_blank" rel="noreferrer" aria-label="Instagram da Luiz Lima Marcenaria">ig</a>
               <a href={whatsapp} target="_blank" rel="noreferrer" aria-label="WhatsApp">wa</a>
             </div>
           </div>

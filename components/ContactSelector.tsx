@@ -5,10 +5,14 @@ type ContactSelectorProps = {
 };
 
 const contactItems = [
-  { label: "Telefone", value: "(48) 99999-9999", href: "tel:+5548999999999" },
-  { label: "WhatsApp", value: "(48) 99999-9999", href: null },
+  { label: "Telefone", value: "+55 48 9830-7060", href: "tel:+554898307060" },
+  { label: "WhatsApp", value: "+55 48 9830-7060", href: null },
   { label: "E-mail", value: "lzlmsa@gmail.com", href: "mailto:lzlmsa@gmail.com" },
-  { label: "Instagram", value: "@luizlimamarcenaria · em breve", href: null },
+  {
+    label: "Instagram",
+    value: "@luizlimamoveis",
+    href: "https://www.instagram.com/luizlimamoveis?igsh=a2Vkc29mOXYzczQ4&utm_source=qr",
+  },
   {
     label: "Endereço",
     value: "Rua Fabriciano Inácio Monteiro, 1112 — Florianópolis",

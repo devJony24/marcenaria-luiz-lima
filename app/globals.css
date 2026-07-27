@@ -223,9 +223,7 @@ h1,h2,h3 { font-family: var(--font-manrope), sans-serif; margin: 0; letter-spaci
 .socials { display:flex; gap:8px; margin-top:8px; }
 .address-link address { transition:color .2s; }
 .address-link:hover address { color:white; }
-.socials a,.social-placeholder { width:34px;height:34px;display:grid;place-items:center;border:1px solid #725a45;border-radius:50%;color:white;font-weight:700;font-size:10px;position:relative; }
-.social-placeholder { color:#b3a18f; cursor:default; }
-.social-placeholder small { position:absolute; left:50%; bottom:-19px; transform:translateX(-50%); white-space:nowrap; font-size:7px; color:#9c8976; font-weight:500; }
+.socials a { width:34px;height:34px;display:grid;place-items:center;border:1px solid #725a45;border-radius:50%;color:white;font-weight:700;font-size:10px;position:relative; }
 .footer-bottom { display:flex; justify-content:space-between; margin-top:58px; padding-top:22px; border-top:1px solid #67503d; color:#a99481; font-size:9px; }
 .floating-wa { position:fixed; z-index:80; right:22px; bottom:22px; min-width:52px;height:52px;padding:0 17px;display:flex;align-items:center;justify-content:center;gap:9px;border-radius:27px;background:#25a95a;color:white;box-shadow:0 12px 30px rgba(20,60,35,.27);font-weight:700;font-size:12px; transition:transform .25s; }
 .floating-wa:hover { transform:translateY(-3px); }
