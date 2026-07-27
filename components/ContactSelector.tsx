@@ -7,7 +7,7 @@ type ContactSelectorProps = {
 const contactItems = [
   { label: "Telefone", value: "(48) 99999-9999", href: "tel:+5548999999999" },
   { label: "WhatsApp", value: "(48) 99999-9999", href: null },
-  { label: "E-mail", value: "contato@luizlimamoveis.com.br", href: "mailto:contato@luizlimamoveis.com.br" },
+  { label: "E-mail", value: "lzlmsa@gmail.com", href: "mailto:lzlmsa@gmail.com" },
   { label: "Instagram", value: "@luizlimamarcenaria · em breve", href: null },
   {
     label: "Endereço",

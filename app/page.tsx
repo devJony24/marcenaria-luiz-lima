@@ -295,7 +295,7 @@ export default function Home() {
             <p>Móveis planejados, montagem e instalações com acabamento profissional.</p>
           </div>
           <div><h3>Navegação</h3>{nav.slice(0, 4).map(([label, id]) => <a key={id} href={`#${id}`}>{label}</a>)}</div>
-          <div><h3>Contato</h3><a href={whatsapp} target="_blank" rel="noreferrer">WhatsApp</a><a href="mailto:contato@luizlimamoveis.com.br">E-mail</a><span>Florianópolis — SC</span></div>
+          <div><h3>Contato</h3><a href={whatsapp} target="_blank" rel="noreferrer">WhatsApp</a><a href="mailto:lzlmsa@gmail.com">lzlmsa@gmail.com</a><span>Florianópolis — SC</span></div>
           <div>
             <h3>Endereço</h3>
             <a className="address-link" href="https://www.google.com/maps/search/?api=1&query=Rua+Fabriciano+Inácio+Monteiro+1112+Florianópolis" target="_blank" rel="noreferrer">
