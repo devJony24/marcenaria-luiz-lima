@@ -8,8 +8,8 @@ const manrope = Manrope({ variable: "--font-manrope", subsets: ["latin"], displa
 export const metadata: Metadata = {
   metadataBase: new URL("https://luizlimamoveis.com.br"),
   title: {
-    default: "Luiz Lima Móveis | Móveis Planejados em Florianópolis",
-    template: "%s | Luiz Lima Móveis",
+    default: "Luiz Lima Marcenaria | Móveis Planejados em Florianópolis",
+    template: "%s | Luiz Lima Marcenaria",
   },
   description:
     "Móveis planejados, montagem, desmontagem, adaptações, reparos e instalação de TVs em Florianópolis. Mais de 2.500 atendimentos desde 2015.",
@@ -18,24 +18,24 @@ export const metadata: Metadata = {
     "montador de móveis Florianópolis",
     "marceneiro Florianópolis",
     "instalação de TV Florianópolis",
-    "Luiz Lima Móveis",
+    "Luiz Lima Marcenaria",
   ],
-  authors: [{ name: "Luiz Lima Móveis" }],
+  authors: [{ name: "Luiz Lima Marcenaria" }],
   alternates: { canonical: "/" },
   openGraph: {
     type: "website",
     locale: "pt_BR",
     url: "/",
-    siteName: "Luiz Lima Móveis",
-    title: "Luiz Lima Móveis | Acabamento profissional em Florianópolis",
+    siteName: "Luiz Lima Marcenaria",
+    title: "Luiz Lima Marcenaria | Acabamento profissional em Florianópolis",
     description: "Móveis planejados, montagem e instalações com qualidade, rapidez e mais de 10 anos de experiência.",
-    images: [{ url: "/og.png", width: 1200, height: 630, alt: "Luiz Lima Móveis — móveis planejados e instalações" }],
+    images: [{ url: "/og-marcenaria.png", width: 1200, height: 630, alt: "Luiz Lima Marcenaria — móveis planejados e instalações" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Luiz Lima Móveis",
+    title: "Luiz Lima Marcenaria",
     description: "Móveis planejados e instalações com acabamento profissional.",
-    images: ["/og.png"],
+    images: ["/og-marcenaria.png"],
   },
   robots: { index: true, follow: true },
 };
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
 const schema = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
-  name: "Luiz Lima Móveis",
+  name: "Luiz Lima Marcenaria",
   description: "Móveis planejados, montagem, desmontagem, adaptações, reparos e instalação de TVs.",
   foundingDate: "2015-10-15",
   address: {

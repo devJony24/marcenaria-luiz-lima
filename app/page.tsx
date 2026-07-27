@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import { ContactSelector } from "../components/ContactSelector";
 
 const whatsapp =
@@ -103,9 +104,8 @@ export default function Home() {
       <a className="skip-link" href="#conteudo">Pular para o conteúdo</a>
       <header className={scrolled ? "site-header scrolled" : "site-header"}>
         <div className="nav-wrap">
-          <a className="brand" href="#home" aria-label="Luiz Lima Móveis, início">
-            <span className="brand-mark">LL</span>
-            <span>LUIZ LIMA <small>MÓVEIS</small></span>
+          <a className="brand" href="#home" aria-label="Luiz Lima Marcenaria, início">
+            <Image src="/luiz-lima-logo.svg" alt="Luiz Lima — Marcenaria e Montagem de Móveis" width={430} height={92} priority />
           </a>
           <nav className={menuOpen ? "main-nav open" : "main-nav"} aria-label="Navegação principal">
             {nav.map(([label, id]) => (
@@ -291,7 +291,7 @@ export default function Home() {
       <footer className="site-footer">
         <div className="container footer-grid">
           <div>
-            <a className="brand footer-brand" href="#home"><span className="brand-mark">LL</span><span>LUIZ LIMA <small>MÓVEIS</small></span></a>
+            <a className="brand footer-brand" href="#home"><Image src="/luiz-lima-logo.svg" alt="Luiz Lima — Marcenaria e Montagem de Móveis" width={430} height={92} /></a>
             <p>Móveis planejados, montagem e instalações com acabamento profissional.</p>
           </div>
           <div><h3>Navegação</h3>{nav.slice(0, 4).map(([label, id]) => <a key={id} href={`#${id}`}>{label}</a>)}</div>
@@ -307,7 +307,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="container footer-bottom"><span>© {new Date().getFullYear()} Luiz Lima Móveis. Todos os direitos reservados.</span><span>Feito com precisão em Florianópolis.</span></div>
+        <div className="container footer-bottom"><span>© {new Date().getFullYear()} Luiz Lima Marcenaria. Todos os direitos reservados.</span><span>Feito com precisão em Florianópolis.</span></div>
       </footer>
       <a className="floating-wa" href={whatsapp} target="_blank" rel="noreferrer" aria-label="Falar no WhatsApp">●<span>Orçamento</span></a>
     </>

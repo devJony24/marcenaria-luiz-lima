@@ -1,82 +1,60 @@
 "use client";
 
-import { useRef, useState } from "react";
-import { ContactForm } from "./ContactForm";
-
 type ContactSelectorProps = {
   whatsappUrl: string;
 };
 
+const contactItems = [
+  { label: "Telefone", value: "(48) 99999-9999", href: "tel:+5548999999999" },
+  { label: "WhatsApp", value: "(48) 99999-9999", href: null },
+  { label: "E-mail", value: "contato@luizlimamoveis.com.br", href: "mailto:contato@luizlimamoveis.com.br" },
+  { label: "Instagram", value: "@luizlimamarcenaria · em breve", href: null },
+  {
+    label: "Endereço",
+    value: "Rua Fabriciano Inácio Monteiro, 1112 — Florianópolis",
+    href: "https://www.google.com/maps/search/?api=1&query=Rua+Fabriciano+Inácio+Monteiro+1112+Florianópolis",
+  },
+];
+
 export function ContactSelector({ whatsappUrl }: ContactSelectorProps) {
-  const [showForm, setShowForm] = useState(false);
-  const formRegionRef = useRef<HTMLDivElement>(null);
-
-  const openForm = () => {
-    setShowForm(true);
-    window.setTimeout(() => {
-      formRegionRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
-      formRegionRef.current?.querySelector<HTMLInputElement>("input")?.focus({
-        preventScroll: true,
-      });
-    }, 180);
-  };
-
   return (
     <section className="contact-choice" id="contato">
-      <div className="container">
-        <div className="contact-choice-heading reveal">
+      <div className="container contact-single reveal">
+        <div className="contact-main">
           <span className="eyebrow">Contato</span>
-          <h2>Como você prefere falar conosco?</h2>
-          <p>Escolha a forma mais confortável para iniciar seu atendimento.</p>
+          <h2>Vamos conversar<br />sobre seu projeto.</h2>
+          <p>Conte o que você precisa e receba um atendimento próximo, rápido e profissional para transformar sua ideia em um ambiente bem resolvido.</p>
+          <a className="button whatsapp-primary" href={whatsappUrl} target="_blank" rel="noreferrer">
+            <span className="whatsapp-mark" aria-hidden="true">●</span>
+            Falar pelo WhatsApp
+            <span aria-hidden="true">↗</span>
+          </a>
+          <small className="response-time"><span aria-hidden="true">✓</span> Respondemos o mais breve possível.</small>
         </div>
 
-        <div className="channel-grid">
-          <article className="channel-card channel-whatsapp reveal">
-            <span className="channel-icon" aria-hidden="true">●</span>
-            <div>
-              <h3>WhatsApp</h3>
-              <p>Converse diretamente conosco e receba um atendimento rápido.</p>
-            </div>
-            <a className="button" href={whatsappUrl} target="_blank" rel="noreferrer">
-              Falar no WhatsApp <span aria-hidden="true">↗</span>
-            </a>
-          </article>
-
-          <article className={`channel-card channel-form reveal${showForm ? " selected" : ""}`}>
-            <span className="channel-icon mail-icon" aria-hidden="true">✉</span>
-            <div>
-              <h3>Solicitar orçamento</h3>
-              <p>Conte um pouco sobre seu projeto para prepararmos um atendimento personalizado.</p>
-            </div>
-            <button
-              className="button button-outline"
-              type="button"
-              onClick={openForm}
-              aria-expanded={showForm}
-              aria-controls="contact-form-region"
-            >
-              {showForm ? "Formulário aberto" : "Preencher formulário"}
-              <span aria-hidden="true">{showForm ? "↓" : "↘"}</span>
-            </button>
-          </article>
-        </div>
-
-        <div
-          id="contact-form-region"
-          ref={formRegionRef}
-          className={`form-reveal${showForm ? " open" : ""}`}
-          aria-hidden={!showForm}
-        >
-          <div className="contact-card">
-            <div className="contact-card-heading">
-              <div>
-                <span>Solicitação de orçamento</span>
-                <p>Preencha os dados abaixo para iniciar seu atendimento.</p>
-              </div>
-              <small>Campos com * são obrigatórios</small>
-            </div>
-            <ContactForm />
+        <div className="contact-details" aria-label="Informações de contato">
+          <div className="contact-details-heading">
+            <span>Outros canais</span>
+            <small>Informações de contato</small>
           </div>
+          <dl>
+            {contactItems.map((item) => (
+              <div className="contact-detail" key={item.label}>
+                <dt>{item.label}</dt>
+                <dd>
+                  {item.href ? (
+                    <a href={item.href} target={item.href.startsWith("http") ? "_blank" : undefined} rel={item.href.startsWith("http") ? "noreferrer" : undefined}>
+                      {item.value} <span aria-hidden="true">↗</span>
+                    </a>
+                  ) : item.label === "WhatsApp" ? (
+                    <a href={whatsappUrl} target="_blank" rel="noreferrer">{item.value} <span aria-hidden="true">↗</span></a>
+                  ) : (
+                    <span>{item.value}</span>
+                  )}
+                </dd>
+              </div>
+            ))}
+          </dl>
         </div>
       </div>
     </section>
