@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     template: "%s | Luiz Lima Marcenaria",
   },
   description:
-    "Móveis planejados, montagem, desmontagem, adaptações, reparos e instalação de TVs em Florianópolis. Mais de 2.500 atendimentos desde 2015.",
+    "Marcenaria especializada em móveis planejados, montagem, desmontagem, adaptações e reparos em Florianópolis.",
   keywords: [
     "móveis planejados Florianópolis",
     "montador de móveis Florianópolis",
