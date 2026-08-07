@@ -3,11 +3,15 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import { ContactSelector } from "../components/ContactSelector";
+import { VideoShowcase } from "../components/VideoShowcase";
 
 const whatsapp =
   "https://wa.me/554898307060?text=Olá%2C%20gostaria%20de%20solicitar%20um%20orçamento.";
 const instagram =
   "https://www.instagram.com/luizlimamoveis?igsh=a2Vkc29mOXYzczQ4&utm_source=qr";
+
+const whatsappForProject = (project: string) =>
+  `https://wa.me/554898307060?text=${encodeURIComponent(`Olá! Vi o projeto ${project} no site e gostaria de um orçamento para algo semelhante.`)}`;
 
 const nav = [
   ["Home", "home"],
@@ -245,12 +249,19 @@ export default function Home() {
                     sizes="(max-width: 720px) calc(100vw - 32px), (max-width: 980px) 50vw, 33vw"
                     style={{ objectPosition: project.position }}
                   />
-                  <div className="project-overlay"><span>{project.label}</span><span className="project-action">Ver projeto ↗</span></div>
+                  <div className="project-overlay">
+                    <span>{project.label}</span>
+                    <a className="project-action" href={whatsappForProject(project.label)} target="_blank" rel="noreferrer" aria-label={`Quero um projeto semelhante a ${project.label}`}>
+                      Quero um projeto assim <span aria-hidden="true">↗</span>
+                    </a>
+                  </div>
                 </article>
               ))}
             </div>
           </div>
         </section>
+
+        <VideoShowcase poster="/media/trabalhos-luiz-lima-poster.webp" videoSrc="/media/trabalhos-luiz-lima.mp4" />
 
         <section className="section process">
           <div className="container">
