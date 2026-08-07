@@ -43,6 +43,39 @@ const faqs = [
   ["Fazem fabricação sob medida?", "Sim. Desenvolvemos móveis planejados conforme as medidas, a necessidade e o estilo de cada ambiente."],
 ];
 
+const projects = [
+  {
+    src: "/projects/armarios-comerciais-planejados.webp",
+    alt: "Armários comerciais planejados e instalados em Florianópolis",
+    label: "Marcenaria comercial",
+    position: "center",
+  },
+  {
+    src: "/projects/roupeiro-planejado-com-espelho.webp",
+    alt: "Roupeiro planejado branco com portas de espelho",
+    label: "Roupeiro planejado",
+    position: "center 42%",
+  },
+  {
+    src: "/projects/movel-planejado-sala-jantar.webp",
+    alt: "Móvel planejado para sala de jantar com acabamento branco e madeira",
+    label: "Sala de jantar",
+    position: "center",
+  },
+  {
+    src: "/projects/painel-tv-com-rack-sob-medida.webp",
+    alt: "Painel de TV com rack de madeira feito sob medida",
+    label: "Painel de TV",
+    position: "center 44%",
+  },
+  {
+    src: "/projects/cozinha-compacta-planejada.webp",
+    alt: "Cozinha compacta planejada em azul e madeira",
+    label: "Cozinha compacta",
+    position: "center 42%",
+  },
+];
+
 function ImagePlaceholder({
   label,
   className = "",
@@ -151,7 +184,15 @@ export default function Home() {
             </div>
             <div className="hero-visual reveal is-visible">
               <div className="wood-accent" />
-              <ImagePlaceholder label="Imagem Hero" className="hero-placeholder" />
+              <div className="hero-media">
+                <Image
+                  src="/projects/cozinha-planejada-moderna.webp"
+                  alt="Cozinha planejada moderna com acabamento em madeira e iluminação embutida"
+                  fill
+                  priority
+                  sizes="(max-width: 980px) calc(100vw - 40px), 52vw"
+                />
+              </div>
               <div className="quality-tag"><span>✓</span><div><b>Acabamento profissional</b><small>Do projeto à instalação</small></div></div>
             </div>
           </div>
@@ -190,14 +231,21 @@ export default function Home() {
         <section className="section projects" id="projetos">
           <div className="container">
             <div className="projects-heading">
-              <SectionTitle eyebrow="Projetos realizados" title="Qualidade que se percebe nos detalhes." text="Em breve, este espaço reunirá uma seleção de trabalhos realizados." />
+              <SectionTitle eyebrow="Projetos realizados" title="Qualidade que se percebe nos detalhes." text="Uma seleção de trabalhos realizados com técnica, cuidado e acabamento profissional." />
               <a className="text-link" href={whatsapp} target="_blank" rel="noreferrer">Quero um projeto assim <span>↗</span></a>
             </div>
             <div className="project-grid">
-              {Array.from({ length: 6 }, (_, index) => (
-                <article className={`project-card reveal project-${index + 1}`} key={index}>
-                  <ImagePlaceholder label="Imagem do Projeto" />
-                  <div className="project-overlay"><span>Projeto 0{index + 1}</span><button type="button">Ver projeto ↗</button></div>
+              {projects.map((project, index) => (
+                <article className={`project-card reveal project-${index + 1}`} key={project.src}>
+                  <Image
+                    src={project.src}
+                    alt={project.alt}
+                    fill
+                    loading="lazy"
+                    sizes="(max-width: 720px) calc(100vw - 32px), (max-width: 980px) 50vw, 33vw"
+                    style={{ objectPosition: project.position }}
+                  />
+                  <div className="project-overlay"><span>{project.label}</span><span className="project-action">Ver projeto ↗</span></div>
                 </article>
               ))}
             </div>
