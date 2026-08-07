@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import { ContactSelector } from "../components/ContactSelector";
-import { VideoShowcase } from "../components/VideoShowcase";
+import { VideoGallery, type VideoGalleryItem } from "../components/VideoGallery";
 
 const whatsapp =
   "https://wa.me/554898307060?text=Olá%2C%20gostaria%20de%20solicitar%20um%20orçamento.";
@@ -12,6 +12,25 @@ const instagram =
 
 const whatsappForProject = (project: string) =>
   `https://wa.me/554898307060?text=${encodeURIComponent(`Olá! Vi o projeto ${project} no site e gostaria de um orçamento para algo semelhante.`)}`;
+
+const videos: VideoGalleryItem[] = [
+  {
+    id: "projetos-recentes",
+    title: "Projetos recentes",
+    description: "Detalhes de cozinhas e ambientes planejados entregues com acabamento cuidadoso.",
+    thumbnail: "/media/trabalhos-luiz-lima-poster.webp",
+    file: "/media/trabalhos-luiz-lima.mp4",
+    duration: "13 segundos",
+  },
+  {
+    id: "apresentacao-servicos",
+    title: "Marcenaria sob medida",
+    description: "Uma apresentação dos serviços e das possibilidades para diferentes ambientes.",
+    thumbnail: "/media/apresentacao-servicos-poster.webp",
+    file: "/media/apresentacao-servicos-luiz-lima.mp4",
+    duration: "32 segundos",
+  },
+];
 
 const nav = [
   ["Home", "home"],
@@ -261,7 +280,7 @@ export default function Home() {
           </div>
         </section>
 
-        <VideoShowcase poster="/media/trabalhos-luiz-lima-poster.webp" videoSrc="/media/trabalhos-luiz-lima.mp4" />
+        <VideoGallery items={videos} />
 
         <section className="section process">
           <div className="container">
