@@ -41,3 +41,9 @@ next-env.d.ts
 /.wrangler/
 /outputs/
 /work/
+
+# claude code / local tooling
+.claude/
+
+# ad-hoc netlify export output
+UPLOAD-NETLIFY-DROP*
