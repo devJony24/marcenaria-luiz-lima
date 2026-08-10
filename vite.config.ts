@@ -1,3 +1,4 @@
+import { fileURLToPath } from "node:url";
 import vinext from "vinext";
 import { defineConfig } from "vite";
 import hostingConfig from "./.openai/hosting.json";
@@ -11,9 +12,21 @@ const { d1, r2 } = hostingConfig;
 // macOS Seatbelt blocks FSEvents, so Codex previews need polling for HMR.
 const isCodexSeatbeltSandbox = process.env.CODEX_SANDBOX === "seatbelt";
 
+// Local-dev-only ASSETS binding simulation: `vinext dev` serves straight from
+// `public/`. `vinext build` overrides `directory` to the built `dist/client`
+// output automatically (see @cloudflare/vite-plugin's getAssetsDirectory),
+// keeping this `binding` name — so `vinext start` picks up dist/client too.
+// Without this, `env.ASSETS` is undefined locally, breaking /_vinext/image
+// and any direct static file (e.g. VideoGallery's <video src>) requests.
+const localAssetsDirectory = fileURLToPath(new URL("./public", import.meta.url));
+
 const localBindingConfig = {
   main: "./worker/index.ts",
   compatibility_flags: ["nodejs_compat"],
+  assets: {
+    directory: localAssetsDirectory,
+    binding: "ASSETS",
+  },
   d1_databases: d1
     ? [
         {
