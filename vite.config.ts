@@ -22,7 +22,10 @@ const localAssetsDirectory = fileURLToPath(new URL("./public", import.meta.url))
 
 const localBindingConfig = {
   main: "./worker/index.ts",
-  compatibility_flags: ["nodejs_compat"],
+  // compatibility_flags já vem de wrangler.jsonc (o plugin funde os dois:
+  // esse objeto customiza por cima do arquivo encontrado no disco).
+  // Repetir "nodejs_compat" aqui faz os arrays serem concatenados e o
+  // Miniflare recusa a flag duplicada.
   assets: {
     directory: localAssetsDirectory,
     binding: "ASSETS",
