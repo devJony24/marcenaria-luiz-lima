@@ -34,19 +34,8 @@ const videos: VideoGalleryItem[] = [
 
 const nav = [
   ["Home", "home"],
-  ["Serviços", "servicos"],
   ["Projetos", "projetos"],
-  ["Sobre", "sobre"],
   ["Contato", "contato"],
-];
-
-const services = [
-  ["▦", "Fabricação de móveis", "Projetos sob medida que unem funcionalidade, proporção e acabamento cuidadoso."],
-  ["⌑", "Montagem", "Montagem técnica e precisa para preservar cada detalhe do seu mobiliário."],
-  ["↗", "Desmontagem", "Desmontagem organizada e segura para mudanças, reformas ou novos layouts."],
-  ["◇", "Adaptações", "Ajustes inteligentes para fazer seus móveis funcionarem melhor no ambiente."],
-  ["✦", "Reparos", "Correções pontuais que recuperam estrutura, alinhamento e aparência."],
-  ["▣", "Instalação de TVs", "Fixação segura, nivelada e com atenção à estética do espaço."],
 ];
 
 const differences = [
@@ -56,13 +45,6 @@ const differences = [
   ["04", "Organização"],
   ["05", "Qualidade"],
   ["06", "Acabamento"],
-];
-
-const faqs = [
-  ["Atende toda Florianópolis?", "Sim. O atendimento é realizado em Florianópolis e a disponibilidade para cada região é confirmada no agendamento."],
-  ["Como solicitar orçamento?", "Basta clicar em um dos botões de WhatsApp e enviar uma breve descrição, medidas e, se possível, fotos do serviço."],
-  ["Vocês desmontam móveis para mudança?", "Sim. A desmontagem é feita de forma organizada, identificando as partes para facilitar a montagem no novo local."],
-  ["Fazem fabricação sob medida?", "Sim. Desenvolvemos móveis planejados conforme as medidas, a necessidade e o estilo de cada ambiente."],
 ];
 
 const projects = [
@@ -135,7 +117,6 @@ function SectionTitle({
 export default function Home() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-  const [openFaq, setOpenFaq] = useState<number | null>(0);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -200,6 +181,7 @@ export default function Home() {
                 </a>
               </div>
               <p className="hero-stats">2.500+ atendimentos · desde 2015 · Florianópolis e região</p>
+              <p className="hero-services">Fabricação · Montagem · Desmontagem · Adaptações · Reparos · TVs</p>
             </div>
             <div className="hero-visual reveal is-visible">
               <div className="wood-accent" />
@@ -217,23 +199,6 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="section services" id="servicos">
-          <div className="container">
-            <SectionTitle eyebrow="O que fazemos" title="Soluções completas, do projeto à instalação." text="Cuidado técnico e atenção aos detalhes em cada etapa do seu ambiente." />
-            <div className="service-grid">
-              {services.map(([icon, title, text], index) => (
-                <article className="service-card reveal" key={title}>
-                  <div className="card-top"><span className="service-icon">{icon}</span><small>0{index + 1}</small></div>
-                  <h3>{title}</h3><p>{text}</p>
-                </article>
-              ))}
-            </div>
-            <div className="service-cta">
-              <a className="button" href={whatsapp} target="_blank" rel="noreferrer">Solicitar serviço <span aria-hidden="true">↗</span></a>
-            </div>
-          </div>
-        </section>
-
         <section className="section projects" id="projetos">
           <div className="container">
             <div className="projects-heading">
@@ -241,8 +206,8 @@ export default function Home() {
               <a className="text-link" href={whatsapp} target="_blank" rel="noreferrer">Quero um projeto assim <span>↗</span></a>
             </div>
             <div className="project-grid">
-              {projects.map((project, index) => (
-                <article className={`project-card reveal project-${index + 1}`} key={project.src}>
+              {projects.map((project) => (
+                <article className="project-card reveal" key={project.src}>
                   <Image
                     src={project.src}
                     alt={project.alt}
@@ -264,41 +229,6 @@ export default function Home() {
         </section>
 
         <VideoGallery items={videos} />
-
-        <section className="section process">
-          <div className="container">
-            <SectionTitle eyebrow="Como funciona" title="Simples para você. Bem executado por nós." />
-            <div className="timeline">
-              {[
-                ["01", "Solicite um orçamento", "Conte o que você precisa e envie as principais informações."],
-                ["02", "Agende o serviço", "Escolhemos juntos a melhor data para o atendimento."],
-                ["03", "Execução profissional", "Realizamos o serviço com técnica, cuidado e organização."],
-                ["04", "Entrega com qualidade", "Conferimos cada detalhe antes de finalizar a entrega."],
-              ].map(([n, title, text]) => (
-                <article className="step reveal" key={n}>
-                  <span>{n}</span><h3>{title}</h3><p>{text}</p>
-                </article>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <section className="section about" id="sobre">
-          <div className="container about-grid">
-            <div className="about-visual reveal">
-              {/*<ImagePlaceholder label="Foto do Luiz" />*/}
-              <div className="experience"><strong>10+</strong><span>anos de<br />experiência</span></div>
-            </div>
-            <div className="about-copy reveal">
-              <span className="eyebrow">Sobre nós</span>
-              <h2>Luiz Lima na marcenaria desde 2015, em Florianópolis.</h2>
-              <p>Desde 15 de outubro de 2015, a <strong>Luiz Lima Móveis</strong> atende Florianópolis com compromisso, proximidade e alto padrão de execução.</p>
-              <p>São mais de 2.500 atendimentos em fabricação, montagem, desmontagem, adaptações, reparos e instalação de TVs — sempre com cuidado do início ao fim.</p>
-              <div className="signature"><span>Luiz Lima</span><small>Marceneiro e fundador</small></div>
-              <a className="button button-outline" href={whatsapp} target="_blank" rel="noreferrer">Conheça nosso trabalho <span>↗</span></a>
-            </div>
-          </div>
-        </section>
 
         {/*<section className="section differences">
           <div className="container">
@@ -328,27 +258,6 @@ export default function Home() {
           </div>
         </section>*/}
 
-        <section className="section faq">
-          <div className="container faq-grid">
-            <div className="faq-intro reveal">
-              <span className="eyebrow">Perguntas frequentes</span>
-              <h2>Tudo o que você precisa saber.</h2>
-              <p>Não encontrou sua dúvida? Fale diretamente com a gente pelo WhatsApp.</p>
-              <a className="text-link" href={whatsapp} target="_blank" rel="noreferrer">Falar com Luiz <span>↗</span></a>
-            </div>
-            <div className="accordion reveal">
-              {faqs.map(([question, answer], index) => (
-                <div className={openFaq === index ? "faq-item open" : "faq-item"} key={question}>
-                  <button onClick={() => setOpenFaq(openFaq === index ? null : index)} aria-expanded={openFaq === index}>
-                    <span>{question}</span><i>{openFaq === index ? "−" : "+"}</i>
-                  </button>
-                  <div className="faq-answer"><p>{answer}</p></div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
         <ContactSelector whatsappUrl={whatsapp} />
       </main>
 
@@ -356,7 +265,7 @@ export default function Home() {
         <div className="container footer-grid">
           <div>
             <a className="brand footer-brand" href="#home"><Image src="/luiz-lima-logo.svg" alt="Luiz Lima — Marcenaria e Montagem de Móveis" width={430} height={92} /></a>
-            <p>Móveis planejados, montagem e instalações com acabamento profissional.</p>
+            <p>Luiz Lima na marcenaria desde 2015, em Florianópolis.</p>
           </div>
           <div><h3>Navegação</h3>{nav.slice(0, 4).map(([label, id]) => <a key={id} href={`#${id}`}>{label}</a>)}</div>
           <div><h3>Contato</h3><a href={whatsapp} target="_blank" rel="noreferrer">WhatsApp</a><a href="mailto:lzlmsa@gmail.com">lzlmsa@gmail.com</a><span>Florianópolis — SC</span></div>
