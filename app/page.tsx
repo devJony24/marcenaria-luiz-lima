@@ -200,10 +200,7 @@ export default function Home() {
                   <span className="wa-icon">●</span> Falar no WhatsApp
                 </a>
               </div>
-              <div className="trust-line">
-                <span className="avatars"><i>LL</i><i>+2k</i></span>
-                <span><b>Excelência em cada detalhe</b><small>Atendimento próximo e profissional</small></span>
-              </div>
+              <p className="hero-stats">2.500+ atendimentos · desde 2015 · Florianópolis e região</p>
             </div>
             <div className="hero-visual reveal is-visible">
               <div className="wood-accent" />
@@ -218,21 +215,6 @@ export default function Home() {
               </div>
               <div className="quality-tag"><span>✓</span><div><b>Acabamento profissional</b><small>Do projeto à instalação</small></div></div>
             </div>
-          </div>
-        </section>
-
-        <section className="numbers" aria-label="Nossos números">
-          <div className="container number-grid">
-            {[
-              ["◷", "2015", "Desde"],
-              ["✦", "2.500+", "Atendimentos realizados"],
-              ["⌖", "Florianópolis", "Atendimento local"],
-              ["↗", "Rápido", "Agendamento facilitado"],
-            ].map(([icon, value, label]) => (
-              <article key={value} className="number-card reveal">
-                <span>{icon}</span><div><strong>{value}</strong><small>{label}</small></div>
-              </article>
-            ))}
           </div>
         </section>
 
