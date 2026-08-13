@@ -267,13 +267,9 @@ export default function Home() {
             <a className="brand footer-brand" href="#home"><Image src="/luiz-lima-logo.svg" alt="Luiz Lima — Marcenaria e Montagem de Móveis" width={430} height={92} /></a>
             <p>Luiz Lima na marcenaria desde 2015, em Florianópolis.</p>
           </div>
-          <div><h3>Navegação</h3>{nav.slice(0, 4).map(([label, id]) => <a key={id} href={`#${id}`}>{label}</a>)}</div>
-          <div><h3>Contato</h3><a href={whatsapp} target="_blank" rel="noreferrer">WhatsApp</a><a href="mailto:lzlmsa@gmail.com">lzlmsa@gmail.com</a><span>Florianópolis — SC</span></div>
+          <div><h3>Navegação</h3>{nav.map(([label, id]) => <a key={id} href={`#${id}`}>{label}</a>)}</div>
           <div>
-            <h3>Endereço</h3>
-            <a className="address-link" href="https://www.google.com/maps/search/?api=1&query=Rua+Fabriciano+Inácio+Monteiro+1112+Florianópolis" target="_blank" rel="noreferrer">
-              <address>Rua Fabriciano Inácio Monteiro, 1112<br />Florianópolis — SC <span aria-hidden="true">↗</span></address>
-            </a>
+            <h3>Siga</h3>
             <div className="socials">
               <a href={instagram} target="_blank" rel="noreferrer" aria-label="Instagram da Luiz Lima Marcenaria">ig</a>
               <a href={whatsapp} target="_blank" rel="noreferrer" aria-label="WhatsApp">wa</a>
