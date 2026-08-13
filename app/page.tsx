@@ -303,7 +303,7 @@ export default function Home() {
         <section className="section about" id="sobre">
           <div className="container about-grid">
             <div className="about-visual reveal">
-              <ImagePlaceholder label="Foto do Luiz" />
+              {/*<ImagePlaceholder label="Foto do Luiz" />*/}
               <div className="experience"><strong>10+</strong><span>anos de<br />experiência</span></div>
             </div>
             <div className="about-copy reveal">
@@ -328,7 +328,8 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="section testimonials">
+        
+        {/*<section className="section testimonials">
           <div className="container">
             <SectionTitle eyebrow="Depoimentos" title="Confiança construída em cada atendimento." />
             <div className="testimonial-grid">
@@ -342,7 +343,7 @@ export default function Home() {
             </div>
             <p className="placeholder-note">* Depoimentos exibidos como placeholders e serão substituídos por avaliações reais.</p>
           </div>
-        </section>
+        </section>*/}
 
         <section className="section faq">
           <div className="container faq-grid">
