@@ -226,9 +226,11 @@ export default function Home() {
                 <article className="service-card reveal" key={title}>
                   <div className="card-top"><span className="service-icon">{icon}</span><small>0{index + 1}</small></div>
                   <h3>{title}</h3><p>{text}</p>
-                  <a href={whatsapp} target="_blank" rel="noreferrer" aria-label={`Solicitar orçamento para ${title}`}>Solicitar serviço <span>↗</span></a>
                 </article>
               ))}
+            </div>
+            <div className="service-cta">
+              <a className="button" href={whatsapp} target="_blank" rel="noreferrer">Solicitar serviço <span aria-hidden="true">↗</span></a>
             </div>
           </div>
         </section>

@@ -98,8 +98,7 @@ h1,h2,h3 { font-family: var(--font-manrope), sans-serif; margin: 0; letter-spaci
 .service-card:hover .service-icon { transform:translateY(-2px) scale(1.05); background:#edf1eb; }
 .service-card h3 { margin-top:32px; font-size:20px; font-weight:650; }
 .service-card p { min-height:62px; margin:13px 0 25px; color:var(--muted); font-size:13px; line-height:1.65; }
-.service-card a { display:flex; justify-content:space-between; align-items:center; font-size:11px; font-weight:700; color:var(--green); opacity:0; transform:translateY(5px); transition:.25s; }
-.service-card:hover a { opacity:1; transform:none; }
+.service-cta { display:flex; justify-content:center; margin-top:50px; }
 
 .projects { background:var(--cream); }
 .projects-heading { display:flex; align-items:flex-end; justify-content:space-between; gap:40px; }
@@ -298,7 +297,6 @@ h1,h2,h3 { font-family: var(--font-manrope), sans-serif; margin: 0; letter-spaci
   .section-heading h2,.about-copy h2,.faq-intro h2 { font-size:35px; }
   .service-grid { grid-template-columns:1fr; }
   .service-card { min-height:270px;padding:28px; }
-  .service-card a { opacity:1;transform:none; }
   .projects-heading { display:block; }
   .projects-heading .text-link { margin-top:22px; }
   .project-grid { grid-template-columns:1fr;grid-template-rows:repeat(5,270px); }
