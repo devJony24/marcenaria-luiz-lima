@@ -317,7 +317,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="section differences">
+        {/*<section className="section differences">
           <div className="container">
             <SectionTitle eyebrow="Por que escolher" title="O cuidado que seu ambiente merece." />
             <div className="difference-grid">
@@ -326,7 +326,7 @@ export default function Home() {
               ))}
             </div>
           </div>
-        </section>
+        </section>*/} 
 
         
         {/*<section className="section testimonials">
