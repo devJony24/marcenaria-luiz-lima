@@ -62,7 +62,6 @@ const faqs = [
   ["Atende toda Florianópolis?", "Sim. O atendimento é realizado em Florianópolis e a disponibilidade para cada região é confirmada no agendamento."],
   ["Como solicitar orçamento?", "Basta clicar em um dos botões de WhatsApp e enviar uma breve descrição, medidas e, se possível, fotos do serviço."],
   ["Vocês desmontam móveis para mudança?", "Sim. A desmontagem é feita de forma organizada, identificando as partes para facilitar a montagem no novo local."],
-  ["Instalam qualquer modelo de TV?", "Atendemos diferentes tamanhos e modelos, sempre avaliando a parede, o suporte e as condições para uma fixação segura."],
   ["Fazem fabricação sob medida?", "Sim. Desenvolvemos móveis planejados conforme as medidas, a necessidade e o estilo de cada ambiente."],
 ];
 
@@ -238,7 +237,7 @@ export default function Home() {
         <section className="section projects" id="projetos">
           <div className="container">
             <div className="projects-heading">
-              <SectionTitle eyebrow="Projetos realizados" title="Qualidade que se percebe nos detalhes." text="Uma seleção de trabalhos realizados com técnica, cuidado e acabamento profissional." />
+              <SectionTitle eyebrow="Projetos realizados" title="Trabalhos entregues" text="Uma seleção de trabalhos realizados com técnica, cuidado e acabamento profissional." />
               <a className="text-link" href={whatsapp} target="_blank" rel="noreferrer">Quero um projeto assim <span>↗</span></a>
             </div>
             <div className="project-grid">
@@ -292,7 +291,7 @@ export default function Home() {
             </div>
             <div className="about-copy reveal">
               <span className="eyebrow">Sobre nós</span>
-              <h2>Experiência que transforma ideias em ambientes bem resolvidos.</h2>
+              <h2>Luiz Lima na marcenaria desde 2015, em Florianópolis.</h2>
               <p>Desde 15 de outubro de 2015, a <strong>Luiz Lima Móveis</strong> atende Florianópolis com compromisso, proximidade e alto padrão de execução.</p>
               <p>São mais de 2.500 atendimentos em fabricação, montagem, desmontagem, adaptações, reparos e instalação de TVs — sempre com cuidado do início ao fim.</p>
               <div className="signature"><span>Luiz Lima</span><small>Marceneiro e fundador</small></div>
